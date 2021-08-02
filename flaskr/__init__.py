@@ -48,11 +48,14 @@ def create_app(test_config=None):
         myResponse = str(a) + " + " + str(b) + " = " + str(c)
         myList = ['a','b','c']
         myDict = {'key1':'value1','key2':'value2'}
-        myResponse += "/nmyList: " +str(myList) + '\nmyDict: ' +\
+        myResponse += "\nmyList: " +str(myList) + '\nmyDict: ' +\
                 str(myDict)
         return myResponse
 
     from . import db
     db.init_app(app)
+    
+    from . import auth
+    app.register_blueprint(auth.bp)
     
     return app

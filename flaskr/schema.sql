@@ -1,8 +1,14 @@
-'''
+/*
 
-Create the user and post tables
+In SQLite, data is stored in tables and columns. These need to be 
+created before you can store and retrieve data. Flaskr will store 
+users in the user table, and posts in the post table
 
-'''
+
+*/
+
+
+
 
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS post;
