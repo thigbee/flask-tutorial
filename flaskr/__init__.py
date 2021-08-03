@@ -52,19 +52,6 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
 
-    # another simple page that says 2+3 =5
-    @app.route('/add')
-    def add():
-        a = random.randint(0,9)
-        b = random.randint(0,9)
-        c = a + b
-        myResponse = str(a) + " + " + str(b) + " = " + str(c)
-        myList = ['a','b','c']
-        myDict = {'key1':'value1','key2':'value2'}
-        myResponse += "\nmyList: " +str(myList) + '\nmyDict: ' +\
-                str(myDict)
-        return myResponse
-
 
     from . import db
     db.init_app(app)
